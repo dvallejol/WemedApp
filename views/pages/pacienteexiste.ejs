@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wemedapp</title>
+
+    <!--<script src="archivho.js"></script>-->
+
+    <script>
+     window.addEventListener('load', function(){
+  console.log('DOM CARGADO');
+
+  var formulario1 = document.querySelector('#formulario2');
+  
+  var pass = document.querySelector("#password");
+  pass.style.display = "none";
+
+  var boton = document.querySelector("#enviar");
+  boton.style.display = "none";
+
+  var formulario3 = document.querySelector("#frminscripcion")
+  formulario3.style.display = "none";
+
+  var eti = document.querySelector('#etiqueta');
+  eti.style.display = "none";
+
+  
+
+  formulario1.addEventListener('keyup', function(){
+     console.log('evento submit capturado');
+     var ced= document.querySelector("#cedula").value;
+     if(ced == '102030'){
+        pass.style.display = 'block';
+        boton.style.display = 'block';
+        formulario3.style.display = 'none';
+        eti.style.display = 'block';
+        
+
+     }else{
+        pass.style.display = 'none';
+        boton.style.display = 'none';
+        formulario3.style.display = 'none';
+        eti.style.display = 'none';
+       
+        
+     }
+
+     if(ced != '102030'){
+      formulario3.style.display = 'block';
+     }
+    
+  });
+});
+    </script>
+
+
+    </scrip>
+</head>
+<body>
+    <form method ="post" id ="formulario2" onsubmit="return false;">
+        <label>cedula</label>
+       <input type="text" name ="cedula" id ="cedula">  <h4  id="etiqueta">USUARIO EXISTE</h4><br><br>
+       <hr>
+       
+       <input type="password" name ="password" id ="password" placeholder="password"><br>
+       <hr>
+       <input type="submit" name ="enviar" id ="enviar"><br>
+       
+    
+    </form> 
+
+
+
+    <div id="frminscripcion" onsubmit="return false;">
+        <form>
+          <label>nombre</label>
+          <input type="text">
+          <button>enviar</button>
+
+        </form>
+    </div>
+</body>
+</html>
